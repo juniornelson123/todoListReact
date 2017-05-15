@@ -1,5 +1,5 @@
 import React from 'react'
-import {Router, Route,Redirect, hashHistory, Switch} from 'react-router' 
+import {HashRouter,Route, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const customHistory = createBrowserHistory()
@@ -9,8 +9,11 @@ import About from '../about/about.jsx'
 
 export default props => (
 
-	<Router history={hashHistory}>
-    <Route path="/" component={Todo}/>
-  </Router>
+	<HashRouter>
+		<Switch>
+	    <Route path="/todos" component={Todo}/>
+	    <Route path="/about" component={About}/>
+    </Switch>
+  </HashRouter>
 	
 )

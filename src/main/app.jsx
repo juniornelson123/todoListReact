@@ -6,6 +6,8 @@ import Menu from '../templates/menu.jsx'
 import Routes from './routes.jsx'
 
 export default class AppComponent extends Component{
+	
+
 	render(){
 		return (
 			<div className="container">
