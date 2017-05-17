@@ -6,7 +6,6 @@ export default class TodoForm extends Component{
 	render(){
 		return(
 			<div role="form" className="todoForm">
-				
 				<Grid cols = "12 9 10">
 					<input id="decription" value={this.props.description} onChange={this.props.handleChange} className="form-control" placeholder="Adicionar uma tarefa"/>
 				</Grid>
@@ -16,7 +15,6 @@ export default class TodoForm extends Component{
 				</Grid> 
 			
 			</div>
-			
 		)
 	}
 }
