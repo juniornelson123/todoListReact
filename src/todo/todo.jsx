@@ -17,8 +17,9 @@ export default class Todo extends Component{
 		this.handlePendent = this.handlePendent.bind(this)
 		
 		this.refresh()
-	}
+	}	
 
+	
 	refresh(){
 
 		axios.get(URL)
