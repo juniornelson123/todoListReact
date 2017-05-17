@@ -11,7 +11,7 @@ export default class AppComponent extends Component{
 	render(){
 		return (
 			<div className="container">
-				<Menu />	
+				<Menu />	 
 				<Routes />	
 			</div>
 		)

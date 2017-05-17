@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter,Route, Switch} from 'react-router-dom';
+import {HashRouter,Route, Redirect, Switch} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory'
 
 const customHistory = createBrowserHistory()
@@ -13,6 +13,7 @@ export default props => (
 		<Switch>
 	    <Route path="/todos" component={Todo}/>
 	    <Route path="/about" component={About}/>
+	    <Redirect from="*" to="/todos" />
     </Switch>
   </HashRouter>
 	
