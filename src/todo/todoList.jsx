@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
+
+import { connect } from 'react-redux'
+
 import IconButton from '../templates/iconButton.jsx'
 
-export default class TodoList extends Component{
+class TodoList extends Component{
 	constructor(props){
 		super(props)
-		console.log(props)
 	}
 	renderRows(){
 		return this.props.list.map(todo => (
@@ -34,3 +36,8 @@ export default class TodoList extends Component{
 		)
 	}
 }
+
+
+const mapStateToProps = state => ({list: state.todo.list})
+
+export default connect(mapStateToProps)(TodoList)

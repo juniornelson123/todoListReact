@@ -1,13 +1,18 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
 import IconButton from '../templates/iconButton.jsx'
 import Grid from '../templates/grid.jsx'
 
-export default class TodoForm extends Component{
+import {changeDescription} from './todoActions'
+
+class TodoForm extends Component{
 	render(){
 		return(
 			<div role="form" className="todoForm">
 				<Grid cols = "12 9 10">
-					<input id="decription" value={this.props.description} onChange={this.props.handleChange} className="form-control" placeholder="Adicionar uma tarefa"/>
+					<input id="decription" value={this.props.description} onChange={this.props.changeDescription} className="form-control" placeholder="Adicionar uma tarefa"/>
 				</Grid>
 
 				<Grid cols="12 3 2">
@@ -18,3 +23,8 @@ export default class TodoForm extends Component{
 		)
 	}
 }
+
+const mapStateToProps = state =>({description: state.todo.description})
+const mapDispatchToProps = dispatch => bindActionCreators({changeDescription}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)
