@@ -1,4 +1,4 @@
-const INITIAL_VALUE = {description: 'ok', list: []}
+const INITIAL_VALUE = {description: '', list: []}
 
 
 export default (state = INITIAL_VALUE, action) => {
@@ -6,6 +6,10 @@ export default (state = INITIAL_VALUE, action) => {
 
 		case 'DESCRIPTION_CHANGED':
 			return {...state, description: action.payload}
+		case 'TODO_SEARCHED':
+			return {...state, list: action.payload.data}
+		case 'TODO_ADD':
+			return {...state, list: action.payload.data}	
 		default:
 			return state	
 	}

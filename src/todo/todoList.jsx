@@ -5,9 +5,7 @@ import { connect } from 'react-redux'
 import IconButton from '../templates/iconButton.jsx'
 
 class TodoList extends Component{
-	constructor(props){
-		super(props)
-	}
+	
 	renderRows(){
 		return this.props.list.map(todo => (
 			<tr key={todo._id}>
