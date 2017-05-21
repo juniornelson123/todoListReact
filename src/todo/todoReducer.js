@@ -13,6 +13,8 @@ export default (state = INITIAL_VALUE, action) => {
 		case 'MARK_DONE':
 			return {...state, list: action.payload.data}
 		case 'MARK_PENDENT':
+			return {...state, list: action.payload.data}
+		case 'REMOVE':
 			return {...state, list: action.payload.data}	
 		default:
 			return state	
